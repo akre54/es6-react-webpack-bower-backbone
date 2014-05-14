@@ -1,0 +1,21 @@
+{
+  "name": "react-example",
+  "authors": [
+    "Adam Krebs <amk528@cs.nyu.edu>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.10.0",
+    "jquery": "~2.1.1",
+    "underscore": "~1.6.0",
+    "backbone": "~1.1.2"
+  }
+}

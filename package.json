@@ -1,0 +1,10 @@
+{
+  "name": "react-example",
+  "private": true,
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "es6-loader": "^0.2.0",
+    "gulp": "^3.6.2",
+    "webpack": "^1.1.10"
+  }
+}
