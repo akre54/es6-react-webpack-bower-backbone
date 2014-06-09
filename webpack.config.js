@@ -18,8 +18,8 @@ module.exports = {
       // required to write 'require('./style.css')'
       { test: /\.css$/,    loader: 'style-loader!css-loader' },
 
-      // ES6
-      { test: /\.es6$/,    loader: 'es6-loader' },
+      // CoffeeScript
+      { test: /\.coffee$/, loader: 'coffee-loader' },
 
       // required for bootstrap icons
       { test: /\.woff$/,   loader: 'url-loader?prefix=font/&limit=5000&mimetype=application/font-woff' },
@@ -31,9 +31,10 @@ module.exports = {
   },
   resolve: {
     modulesDirectories: ['bower_components', 'node_modules'],
-    extensions: ['', '.js', '.es6']
+    extensions: ['', '.js', '.coffee']
   },
   plugins: [
+    new webpack.ContextReplacementPlugin(/react$/, /\.\/bower_components\/react\/react\.js/),
     new webpack.ProvidePlugin({
       // Automatically detect jQuery and $ as free var in modules
       // and inject the jquery library

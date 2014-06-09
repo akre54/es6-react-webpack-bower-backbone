@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', function (cb) {
   webpack(webpackConfig, function(err, stats) {
-    console.log(stats.toString());
+    console.log(stats.toString({reasons: true, modules: true}));
     cb();
   });
 });
