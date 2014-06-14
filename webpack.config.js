@@ -34,7 +34,6 @@ module.exports = {
     extensions: ['', '.js', '.coffee']
   },
   plugins: [
-    new webpack.ContextReplacementPlugin(/react$/, /\.\/bower_components\/react\/react\.js/),
     new webpack.ProvidePlugin({
       // Automatically detect jQuery and $ as free var in modules
       // and inject the jquery library
