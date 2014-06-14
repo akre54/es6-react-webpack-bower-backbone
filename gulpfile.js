@@ -7,5 +7,7 @@ gulp.task('default', function (cb) {
     console.log(stats.toString({reasons: true, modules: true}));
     cb();
   });
+  gulp.src('app/index.html')
+      .pipe(gulp.dest('dist'));
 });
 
