@@ -27,14 +27,16 @@ module.exports = {
       { test: /\.eot$/,    loader: 'file-loader?prefix=font/' },
       { test: /\.svg$/,    loader: 'file-loader?prefix=font/' },
     ],
-    noParse: /\.min\.js/
+    noParse: [
+      /\.min\.js/,
+      /\/react.js$/
+    ],
   },
   resolve: {
     modulesDirectories: ['bower_components', 'node_modules'],
     extensions: ['', '.js', '.coffee']
   },
   plugins: [
-    new webpack.ContextReplacementPlugin(/react$/, /\.\/bower_components\/react\/react\.js/),
     new webpack.ProvidePlugin({
       // Automatically detect jQuery and $ as free var in modules
       // and inject the jquery library
