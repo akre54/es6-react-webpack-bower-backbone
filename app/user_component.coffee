@@ -8,7 +8,7 @@ module.exports = React.createClass
   getListeners: ->
     [
       model: @props.user,
-      events: {change: @forceUpdate.bind this}
+      events: {change: @forceUpdate.bind(this, null)}
     ]
 
   componentWillMount: ->
