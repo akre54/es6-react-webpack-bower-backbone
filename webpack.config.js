@@ -4,6 +4,7 @@ var path = require('path'),
 module.exports = {
   cache: true,
   debug: true,
+  watch: true,
   entry: {
     app: './app/app'
   },
@@ -36,6 +37,9 @@ module.exports = {
     modulesDirectories: ['bower_components', 'node_modules'],
     extensions: ['', '.js', '.coffee']
   },
+  externals: [
+    { jquery: true }
+  ],
   plugins: [
     new webpack.ProvidePlugin({
       // Automatically detect jQuery and $ as free var in modules

@@ -3,6 +3,8 @@ User = require './user'
 UserComponent = React.createFactory require './user_component'
 ButtonComponent = React.createFactory require './button'
 
+require './initialize'
+
 user = new User id: 1
 React.render UserComponent({user}), document.body
 # React.render ButtonComponent({}), document.body
