@@ -16,22 +16,15 @@ module.exports = {
   module: {
     loaders: [
       // required to write 'require('./style.css')'
-      { test: /\.css$/,    loader: 'style-loader!css-loader' },
+      { test: /\.css$/, loader: 'style!css' },
 
-      // ES6
-      { test: /\.es6$/,    loader: 'es6-loader' },
+      { test: /\.js$/, loader: 'babel' },
 
       // required for bootstrap icons
-      { test: /\.woff$/,   loader: 'url-loader?prefix=font/&limit=5000&mimetype=application/font-woff' },
-      { test: /\.ttf$/,    loader: 'file-loader?prefix=font/' },
-      { test: /\.eot$/,    loader: 'file-loader?prefix=font/' },
-      { test: /\.svg$/,    loader: 'file-loader?prefix=font/' },
+      { test: /\.woff$/, loader: 'url?prefix=font/&limit=5000&mimetype=application/font-woff' },
+      { test: /\.(ttf|eot|svg)$/, loader: 'file?prefix=font/' },
     ],
     noParse: /\.min\.js/
-  },
-  resolve: {
-    modulesDirectories: ['bower_components', 'node_modules'],
-    extensions: ['', '.js', '.es6']
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -41,8 +34,5 @@ module.exports = {
       jQuery: 'jquery',
       $: 'jquery'
     }),
-    new webpack.ResolverPlugin([
-        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    ])
   ]
 };
