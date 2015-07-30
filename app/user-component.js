@@ -9,7 +9,7 @@ export default React.createClass({
   getListeners: function () {
     return [{
       model: this.props.user,
-      events: {change: this.forceUpdate.bind(this, null)}
+      events: { change: this.forceUpdate.bind(this, null) }
     }];
   },
 
@@ -18,10 +18,11 @@ export default React.createClass({
   },
 
   render: function () {
-    var user = this.props.user;
-    return div( {className: 'user'},
+    const user = this.props.user;
+    return div( { className: 'user' },
         h1(null, user.get('name')),
         h2(null, user.get('title'))
       );
   }
 });
+
